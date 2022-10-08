@@ -5,16 +5,15 @@
 
 ---
 
-### Assignment A7-7: Lab 7-9
+### Assignment A7-8: Lab 7-10
 
 ### Open the "main.hpp"
 
 > Complete functions
 
-
 ### 👓 Watch:
 
-- [Two Dimensional Arrays [Lab7-9]]. (9 mins)](https://youtu.be/X6qdLYqv9fU)
+- [Two Dimensional Arrays [Lab7-10]](https://youtu.be/bu4Ab1UN_m0)
 
 ## You can test your program by typing the command
 

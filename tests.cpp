@@ -4,74 +4,39 @@
 #include "catch.hpp"
 #include "main.hpp"
 // tests for exercise 1
-TEST_CASE("Ex1 findmaxsum()", "[example]")
+TEST_CASE("Ex1 maze1 ", "[example]")
 {
-	const int NUM_ROWS = 6; // Number of rows
-	const int NUM_COLS = 5; // Number of columns
-	int result[SIZE] = {0};
-	int numbers[NUM_ROWS][NUM_COLS] = {{2, 7, 9, 6, 4},
-					   {6, 1, 8, 10, 4},
-					   {4, 3, 7, 2, 9},
-					   {9, 9, 0, 3, 1},
-					   {8, 8, 7, 8, 9},
-					   {1, 2, 1, 2, 3}};
+	int cnt = 0;
+	int maze[10][10] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+			    0, 0, 0, 1, 1, 1, 0, 0, 0, 0,
+			    0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+			    0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+			    1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+			    0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			    0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			    0, 1, 0, 0, 1, 0, 1, 1, 0, 0,
+			    0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			    0, 1, 0, 0, 1, 1, 1, 0, 0, 0};
+	cnt = findcross(maze);
+	printout(maze, cnt);
 
-	findMaxSum(result, numbers, NUM_ROWS, NUM_COLS);
-	cout << "The result values are:";
-	for (int i = 0; i < NUM_COLS; i++)
-		cout << setw(5) << result[i];
-	cout << endl;
-	REQUIRE(result[0] == 8);
-	REQUIRE(result[1] == 8);
-	REQUIRE(result[2] == 7);
-	REQUIRE(result[3] == 8);
-	REQUIRE(result[4] == 9);
+	REQUIRE(cnt == 4);
 }
 // tests for exercise 2
-TEST_CASE("Ex2 findMaxElm()", "[example]")
+TEST_CASE("Ex2 maze2()", "[example]")
 {
-	const int NUM_ROWS = 6; // Number of rows
-	const int NUM_COLS = 5; // Number of columns
-	int result[SIZE] = {0};
-	int numbers[NUM_ROWS][NUM_COLS] = {{2, 7, 9, 6, 4},
-					   {6, 1, 8, 10, 4},
-					   {4, 3, 7, 2, 9},
-					   {9, 9, 0, 3, 1},
-					   {8, 8, 7, 8, 9},
-					   {1, 2, 1, 2, 3}};
-
-	findMaxElm(result, numbers, NUM_ROWS, NUM_COLS);
-	cout << "The result values are:";
-	for (int i = 0; i < NUM_ROWS; i++)
-		cout << setw(5) << result[i];
-	cout << endl;
-	REQUIRE(result[0] == 9);
-	REQUIRE(result[1] == 10);
-	REQUIRE(result[2] == 9);
-	REQUIRE(result[3] == 9);
-	REQUIRE(result[4] == 9);
-	REQUIRE(result[5] == 3);
-}
-TEST_CASE("Ex3 findMaxVal()", "[example]")
-{
-	const int NUM_ROWS = 6; // Number of rows
-	const int NUM_COLS = 5; // Number of columns
-	int result[SIZE] = {0};
-	int numbers[NUM_ROWS][NUM_COLS] = {{2, 7, 9, 6, 4},
-					   {6, 1, 8, 10, 4},
-					   {4, 3, 7, 2, 9},
-					   {9, 9, 0, 3, 1},
-					   {8, 8, 7, 8, 9},
-					   {1, 2, 1, 2, 3}};
-
-	findMaxVal(result, numbers, NUM_ROWS, NUM_COLS);
-	cout << "The result values are:";
-	for (int i = 0; i < NUM_COLS; i++)
-		cout << setw(5) << result[i];
-	cout << endl;
-	REQUIRE(result[0] == 6);
-	REQUIRE(result[1] == 1);
-	REQUIRE(result[2] == 8);
-	REQUIRE(result[3] == 10);
-	REQUIRE(result[4] == 4);
+	int cnt = 0;
+	int maze2[10][10] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+			     0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+			     0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+			     0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			     1, 0, 1, 1, 0, 1, 1, 0, 0, 0,
+			     0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			     0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			     0, 1, 0, 0, 1, 0, 1, 1, 0, 0,
+			     0, 1, 0, 0, 1, 1, 1, 0, 0, 0,
+			     0, 1, 0, 0, 1, 1, 1, 0, 0, 0};
+	cnt = findcross(maze2);
+	printout(maze2, cnt);
+	REQUIRE(cnt == 2);
 }
